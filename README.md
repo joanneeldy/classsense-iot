@@ -1,29 +1,32 @@
 # ClassSense
 
-ClassSense is a Streamlit prototype for exploring classroom environmental monitoring. It compares basic temperature, humidity and light thresholds with an Isolation Forest anomaly detector.
+A classroom environmental monitoring prototype built with Python, Streamlit, and Isolation Forest.
 
-The example is based on a classroom with two AC units, two ceiling fans and manually switched lighting. All readings in the app are **simulated**; it is not connected to physical sensors or appliances.
+ClassSense explores how machine learning-based anomaly detection compares with traditional threshold-based monitoring using simulated classroom temperature, humidity, and lighting data.
 
-## Run locally
+### Live Demo
 
-```bash
-python -m pip install -r requirements.txt
-python -m streamlit run app.py
-```
+**[Try ClassSense on Streamlit](https://classsense-iot.streamlit.app/)**
 
-## How it works
+Explore the interactive dashboard by adjusting simulated classroom conditions and observing how threshold-based rules and the Isolation Forest model respond to different readings.
 
-- Adjust temperature, humidity and illuminance in the scenario simulator.
-- Compare the threshold decision with the ML anomaly flag for the same reading.
-- Review evaluation metrics on a separate synthetic test set.
-- Download evaluation results or synthetic test data as CSV.
+### Features
 
-The model is trained on 700 assumed-normal synthetic examples. Evaluation uses 240 synthetic normal cases and 60 injected anomalies, with a fixed random seed for repeatable results.
+- Interactive temperature, humidity, and illumination simulation
+- Threshold-based environmental alerts
+- Isolation Forest anomaly detection
+- Performance comparison using synthetic test data
+- Suggested environmental checks based on simulated conditions
 
-## Limitations
+### Tech Stack
 
-Synthetic results are not evidence of real-world accuracy or classroom comfort. The anomaly score is not a probability. Proposed sensor integration, validation using real measurements, and secure telemetry remain future work.
+- Python
+- Streamlit
+- Scikit-learn
+- Pandas and NumPy
 
-## Deployment
+### Project Scope
 
-Deploy using [Streamlit Community Cloud](https://share.streamlit.io/) and select `app.py` as the main file. Dependencies are listed in `requirements.txt`.
+ClassSense is an exploratory prototype developed to examine the potential of IoT-assisted classroom monitoring. The dashboard currently uses synthetic data rather than live sensor measurements.
+
+Virtual sensor acquisition was explored separately using ESP32 and Wokwi. Real-time integration between the sensor simulation and dashboard is outside the current implementation.
